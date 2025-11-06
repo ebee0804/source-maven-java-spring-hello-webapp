@@ -39,7 +39,7 @@ pipeline {
     label 'controller'
    }
    steps {
-    sh 'docker run -d --name myweb-tomcat -p 80:8080 tomcat:hello'
+    sh 'docker run -d --name myweb-tomcat -p 8088:8080 tomcat:hello'
    }
   }
  }
