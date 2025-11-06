@@ -27,7 +27,7 @@ pipeline {
 
   stage('Image Build') {
    agent {
-    label { 'controller' }
+    label 'controller' 
    }
    steps {
     sh 'docker image build -t tomcat:hello .'
@@ -36,7 +36,7 @@ pipeline {
 
   stage('Deploy') {
    agent {
-    label { 'controller' }
+    label 'controller'
    }
    steps {
     sh 'docker run -d --name myweb-tomcat -p 80:8080 tomcat:hello'
