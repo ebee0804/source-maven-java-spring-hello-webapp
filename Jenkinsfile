@@ -23,6 +23,7 @@ pipeline {
    steps {
     sh 'mvn clean package'
    }
+  }
 
   stage('Image Build') {
    agent {
@@ -31,6 +32,7 @@ pipeline {
    steps {
     sh 'docker image build -t tomcat:hello .'
    }
+  }
 
   stage('Deploy') {
    agent {
